@@ -1,0 +1,28 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Airflow runtime logs & sqlite (nếu có)
+airflow/logs/
+*.pid
+
+# Streaming & Storage runtime data
+streaming/delta_lake/
+streaming/jars/
+ingestion/data/*.json
+!ingestion/data/.gitkeep
+
+# Environment variables & secrets
+.env
+*.pem
+*.key
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
