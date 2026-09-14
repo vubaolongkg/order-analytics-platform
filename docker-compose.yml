@@ -62,13 +62,16 @@ services:
       - AIRFLOW__CORE__LOAD_EXAMPLES=False
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow_password@postgres-airflow/airflow
+      - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/keys/gcp_key.json
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/logs:/opt/airflow/logs
       - ./airflow/plugins:/opt/airflow/plugins
+      - ./airflow/keys:/opt/airflow/keys:ro
+      - ./streaming/delta_lake:/opt/airflow/delta_lake:ro
     ports:
       - "8085:8080"
-    command: bash -c "airflow db migrate && airflow users create --username admin --firstname Anthony --lastname User --role Admin --email admin@example.com --password admin || true && airflow webserver"
+    command: bash -c "pip install --no-cache-dir google-cloud-bigquery deltalake pandas pyarrow && airflow db migrate && airflow users create --username admin --firstname Anthony --lastname User --role Admin --email admin@example.com --password admin || true && airflow webserver"
 
   airflow-scheduler:
     image: apache/airflow:2.8.1-python3.10
@@ -80,11 +83,15 @@ services:
       - AIRFLOW__CORE__LOAD_EXAMPLES=False
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow_password@postgres-airflow/airflow
+      - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/keys/gcp_key.json
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/logs:/opt/airflow/logs
       - ./airflow/plugins:/opt/airflow/plugins
-    command: airflow scheduler
+      - ./airflow/keys:/opt/airflow/keys:ro
+      - ./streaming/delta_lake:/opt/airflow/delta_lake:ro
+    command: bash -c "pip install --no-cache-dir google-cloud-bigquery deltalake pandas pyarrow && airflow scheduler"
+    
   # ==========================================
   # 4. Spark Structured Streaming Container
   # ==========================================

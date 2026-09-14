@@ -20,9 +20,11 @@ ingestion/data/*.json
 .env
 *.pem
 *.key
+airflow/keys/*.json
 
 # OS & Editor files
 .DS_Store
 Thumbs.db
 .idea/
 .vscode/
+
