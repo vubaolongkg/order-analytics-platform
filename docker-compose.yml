@@ -85,7 +85,28 @@ services:
       - ./airflow/logs:/opt/airflow/logs
       - ./airflow/plugins:/opt/airflow/plugins
     command: airflow scheduler
-
+  # ==========================================
+  # 4. Spark Structured Streaming Container
+  # ==========================================
+  spark-streaming:
+    build:
+      context: ./streaming
+      dockerfile: Dockerfile
+    container_name: spark-streaming
+    user: "0:0"
+    restart: on-failure
+    depends_on:
+      - redpanda
+    environment:
+      - KAFKA_BROKER=redpanda:9092
+    volumes:
+      - ./streaming:/opt/spark-apps
+    working_dir: /opt/spark-apps
+    command: >
+      spark-submit
+      --conf spark.jars.ivy=/tmp/.ivy2
+      --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0,io.delta:delta-spark_2.12:3.1.0
+      spark_streaming.py
 volumes:
   redpanda_data:
   postgres_airflow_data:
