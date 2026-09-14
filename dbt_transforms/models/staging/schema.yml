@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw_staging
+    database: velvety-citizen-466214-r4
+    schema: raw_staging
+    tables:
+      - name: bronze_orders

@@ -1,0 +1,20 @@
+name: 'order_analytics_dbt'
+version: '1.0.0'
+config-version: 2
+
+profile: 'order_analytics_profile'
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  order_analytics_dbt:
+    staging:
+      +materialized: view
+      +schema: staging
+    marts:
+      +materialized: table
+      +schema: marts

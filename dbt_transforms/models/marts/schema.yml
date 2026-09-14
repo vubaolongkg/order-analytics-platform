@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: dim_restaurants
+    description: "Bảng dimension thông tin nhà hàng và vị trí"
+    columns:
+      - name: restaurant_id
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_orders
+    description: "Bảng fact chi tiết đơn hàng và trạng thái vòng đời"
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: total_amount
+        tests:
+          - not_null
+
+  - name: fct_hourly_metrics
+    description: "Bảng tổng hợp doanh thu và tỷ lệ hủy theo khung giờ"
+    columns:
+      - name: metric_hour
+        tests:
+          - not_null
+      - name: total_orders
+        tests:
+          - not_null

@@ -1,0 +1,11 @@
+order_analytics_profile:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: velvety-citizen-466214-r4
+      dataset: raw_staging
+      threads: 4
+      keyfile: D:\thuchanh\Road To Data Engineer\Project\order-analytics-platform\airflow\keys\gcp_key.json
+      location: US

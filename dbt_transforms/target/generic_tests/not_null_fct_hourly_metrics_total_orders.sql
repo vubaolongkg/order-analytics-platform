@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="total_orders", model=get_where_subquery(ref('fct_hourly_metrics'))) }}

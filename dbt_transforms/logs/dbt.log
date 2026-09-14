@@ -1,0 +1,612 @@
+==================== 2026-09-14T07:13:58.413484Z | 01a09ec3-f87e-7ee1-a226-eb961fe0b633 ====================
+07:13:58.414784 [info ]: dbt-core 2.0.0-alpha.5
+07:13:58.420002 [info ]: Started loading project
+07:13:58.439065 [info ]: Loading profiles.yml
+07:13:58.449018 [info ]: Finished loading project [  0.03s]
+07:13:58.451001 [info ]: Started debugging
+07:13:58.451497 [info ]: Debugging profile: dev
+07:13:58.452139 [info ]: Debugging dbt version: 2.0.0-alpha.5
+07:13:58.452384 [info ]: Debugging platform: windows x86_64 (windows)
+07:13:58.452888 [info ]: Debugging adapter type: bigquery (remote)
+07:13:58.608054 [info ]: Debugging dependencies:
+  git: OK
+07:13:58.610483 [info ]: Debugging connection:
+  "database": "velvety-citizen-466214-r4",
+  "schema": "raw_staging",
+  "method": "service-account",
+  "location": "US",
+  "dataproc_batch": null
+07:14:07.078775 [debug]: Query executed on node unknown:
+select 1 as id
+07:14:07.083918 [info ]: Debugging connection test: OK
+07:14:07.086604 [info ]: Debugged All checks passed!
+07:14:07.088180 [info ]: Finished debugging [  8.64s]
+07:14:07.458461 [info ]: 
+==================== Execution Summary =====================
+Finished 'debug' successfully for target 'dev' [9.0s]
+==================== 2026-09-14T07:14:43.261209Z | 01a09ec4-a7b7-7b53-8c6e-bb19ee0cb0f5 ====================
+07:14:43.261413 [info ]: dbt-core 2.0.0-alpha.5
+07:14:43.262501 [info ]: Started loading project
+07:14:43.270708 [info ]: Loading profiles.yml
+07:14:43.301081 [debug]:    Started loading packages
+07:14:43.331958 [debug]:     Loaded [  0.03s] packages
+07:14:43.345701 [info ]: Finished loading project [  0.08s]
+07:14:43.353174 [info ]: Started parsing
+07:14:43.467891 [debug]: Finished parsing models/marts/dim_restaurants.sql [  0.02s]
+07:14:43.468982 [debug]: Finished parsing models/marts/fct_hourly_metrics.sql [  0.00s]
+07:14:43.469718 [debug]: Finished parsing models/marts/fct_orders.sql [  0.00s]
+07:14:43.470706 [debug]: Finished parsing models/staging/stg_orders.sql [  0.00s]
+07:14:43.487035 [error]: [DependencyNotFound (dbt1048)]: Source 'raw_staging.bronze_orders' not found in project. Searched for 'bronze_orders'
+  --> models/staging/stg_orders.sql:2:19
+07:14:43.491355 [info ]: Finished parsing [  0.14s]
+07:14:44.802571 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' with 1 error for target 'dev' [1.5s]
+==================== 2026-09-14T07:16:17.214119Z | 01a09ec6-16ba-7022-8381-4ab7adc2720d ====================
+07:16:17.214272 [info ]: dbt-core 2.0.0-alpha.5
+07:16:17.215011 [info ]: Started loading project
+07:16:17.221960 [info ]: Loading profiles.yml
+07:16:17.251044 [debug]:    Started loading packages
+07:16:17.273741 [debug]:     Loaded [  0.02s] packages
+07:16:17.284113 [info ]: Finished loading project [  0.07s]
+07:16:17.286959 [info ]: Started parsing
+07:16:17.363222 [debug]: Finished parsing models/staging/schema.yml [  0.01s]
+07:16:17.394039 [debug]: Finished parsing models/marts/dim_restaurants.sql [  0.02s]
+07:16:17.394607 [debug]: Finished parsing models/marts/fct_hourly_metrics.sql [  0.00s]
+07:16:17.395042 [debug]: Finished parsing models/marts/fct_orders.sql [  0.00s]
+07:16:17.395673 [debug]: Finished parsing models/staging/stg_orders.sql [  0.00s]
+07:16:17.407087 [info ]: Finished parsing [  0.12s]
+07:16:17.411080 [info ]: Started scheduling
+07:16:17.414813 [info ]: Finished scheduling [  0.00s]
+=======================Selected nodes=======================
+07:16:17.416244 [info ]: source:order_analytics_dbt.raw_staging.bronze_orders
+07:16:18.483692 [info ]: 
+==================== Execution Summary =====================
+Finished 'list' successfully for target 'dev' [1.3s]
+==================== 2026-09-14T07:16:39.778135Z | 01a09ec6-6edf-77b0-b846-63e813677c36 ====================
+07:16:39.778256 [info ]: dbt-core 2.0.0-alpha.5
+07:16:39.778656 [info ]: Started loading project
+07:16:39.784881 [info ]: Loading profiles.yml
+07:16:39.788505 [debug]:    Started loading packages
+07:16:39.791222 [debug]:     Loaded [  0.00s] packages
+07:16:39.792143 [info ]: Finished loading project [  0.01s]
+07:16:39.792597 [info ]: Started parsing
+07:16:39.838139 [debug]: Finished parsing models/staging/schema.yml [  0.01s]
+07:16:39.845473 [debug]: Finished parsing models/marts/dim_restaurants.sql [  0.00s]
+07:16:39.845838 [debug]: Finished parsing models/marts/fct_hourly_metrics.sql [  0.00s]
+07:16:39.846316 [debug]: Finished parsing models/marts/fct_orders.sql [  0.00s]
+07:16:39.846766 [debug]: Finished parsing models/staging/stg_orders.sql [  0.00s]
+07:16:39.851448 [info ]: Finished parsing [  0.06s]
+07:16:39.854872 [info ]: Started scheduling
+07:16:39.859410 [info ]: Finished scheduling [  0.00s]
+07:16:39.867158 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "velvety-citizen-466214-r4", schema: "raw_staging", table: "bronze_orders" }) and interval: None
+07:16:39.880966 [info ]: Started building task graph
+07:16:39.888416 [info ]: Finished building task graph [  0.01s]
+07:16:44.390005 [debug]: Query executed on node unknown:
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "order_analytics_profile", "target_name": "dev"} */
+
+    select distinct schema_name from `velvety-citizen-466214-r4`.INFORMATION_SCHEMA.SCHEMATA;
+  
+07:16:46.116361 [debug]: Query executed on node unknown:
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "order_analytics_profile", "target_name": "dev"} */
+create schema if not exists `velvety-citizen-466214-r4`.`raw_staging_marts`
+07:16:47.559958 [debug]: Query executed on node unknown:
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "order_analytics_profile", "target_name": "dev"} */
+create schema if not exists `velvety-citizen-466214-r4`.`raw_staging_staging`
+07:16:47.560307 [info ]: Started rendering (4 nodes)
+07:16:47.560511 [info ]: Started model raw_staging_staging.stg_orders
+07:16:47.560561 [debug]: Started rendering model raw_staging_staging.stg_orders
+07:16:47.567784 [debug]: Compiled SQL for node model.order_analytics_dbt.stg_orders at target\compiled\order_analytics_dbt\models\staging\stg_orders.sql
+07:16:47.568220 [debug]: Finished rendering [  0.01s] model raw_staging_staging.stg_orders [success]
+07:16:47.568860 [info ]: Started running (4 nodes)
+07:16:47.569234 [info ]: Started running model raw_staging_staging.stg_orders
+07:16:50.187579 [debug]: Query executed on node model.order_analytics_dbt.stg_orders:
+SELECT
+    table_catalog,
+    table_schema,
+    table_name,
+    table_type
+FROM 
+    `velvety-citizen-466214-r4`.`raw_staging_staging`.INFORMATION_SCHEMA.TABLES
+07:16:50.220223 [debug]: Writing runtime sql for node "model.order_analytics_dbt.stg_orders"
+07:16:52.831021 [debug]: Query executed on node model.order_analytics_dbt.stg_orders:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.order_analytics_dbt.stg_orders", "profile_name": "order_analytics_profile", "target_name": "dev"} */
+
+
+  create or replace view `velvety-citizen-466214-r4`.`raw_staging_staging`.`stg_orders`
+  OPTIONS()
+  as with source as (
+    select * from `velvety-citizen-466214-r4`.`raw_staging`.`bronze_orders`
+),
+
+ranked_orders as (
+    select
+        order_id,
+        status,
+        restaurant_id,
+        restaurant_name,
+        restaurant_category,
+        restaurant_lat,
+        restaurant_lon,
+        customer_id,
+        customer_lat,
+        customer_lon,
+        driver_id,
+        cast(total_amount as float64) as total_amount,
+        timestamp_millis(event_timestamp) as event_time,
+        row_number() over (
+            partition by order_id 
+            order by event_timestamp desc
+        ) as rn
+    from source
+)
+
+select
+    order_id,
+    status,
+    restaurant_id,
+    restaurant_name,
+    restaurant_category,
+    restaurant_lat,
+    restaurant_lon,
+    customer_id,
+    customer_lat,
+    customer_lon,
+    driver_id,
+    total_amount,
+    event_time
+from ranked_orders
+where rn = 1;
+
+
+07:16:52.835693 [info ]: Finished running [  5.27s] model raw_staging_staging.stg_orders [success]
+07:16:52.836276 [info ]:  Succeeded [  5.27s] model raw_staging_staging.stg_orders (view)
+07:16:52.837589 [info ]: Started model raw_staging_marts.dim_restaurants
+07:16:52.837630 [debug]: Started rendering model raw_staging_marts.dim_restaurants
+07:16:52.837659 [info ]: Started model raw_staging_marts.fct_hourly_metrics
+07:16:52.837666 [debug]: Started rendering model raw_staging_marts.fct_hourly_metrics
+07:16:52.837685 [info ]: Started model raw_staging_marts.fct_orders
+07:16:52.837693 [debug]: Started rendering model raw_staging_marts.fct_orders
+07:16:52.841590 [debug]: Compiled SQL for node model.order_analytics_dbt.fct_hourly_metrics at target\compiled\order_analytics_dbt\models\marts\fct_hourly_metrics.sql
+07:16:52.841722 [debug]: Finished rendering [  0.00s] model raw_staging_marts.fct_hourly_metrics [success]
+07:16:52.842307 [info ]: Started running model raw_staging_marts.fct_hourly_metrics
+07:16:52.842702 [debug]: Compiled SQL for node model.order_analytics_dbt.fct_orders at target\compiled\order_analytics_dbt\models\marts\fct_orders.sql
+07:16:52.842781 [debug]: Finished rendering [  0.01s] model raw_staging_marts.fct_orders [success]
+07:16:52.842857 [info ]: Started running model raw_staging_marts.fct_orders
+07:16:52.842928 [debug]: Compiled SQL for node model.order_analytics_dbt.dim_restaurants at target\compiled\order_analytics_dbt\models\marts\dim_restaurants.sql
+07:16:52.843031 [debug]: Finished rendering [  0.01s] model raw_staging_marts.dim_restaurants [success]
+07:16:52.843084 [info ]: Finished rendering [  5.28s] (4 nodes, 0 skipped, 0 errors)
+07:16:52.843968 [info ]: Started running model raw_staging_marts.dim_restaurants
+07:16:55.579342 [debug]: Query executed on node model.order_analytics_dbt.fct_hourly_metrics:
+SELECT
+    table_catalog,
+    table_schema,
+    table_name,
+    table_type
+FROM 
+    `velvety-citizen-466214-r4`.`raw_staging_marts`.INFORMATION_SCHEMA.TABLES
+07:16:55.585046 [debug]: Writing runtime sql for node "model.order_analytics_dbt.fct_hourly_metrics"
+07:16:56.009714 [debug]: Query executed on node model.order_analytics_dbt.dim_restaurants:
+SELECT
+    table_catalog,
+    table_schema,
+    table_name,
+    table_type
+FROM 
+    `velvety-citizen-466214-r4`.`raw_staging_marts`.INFORMATION_SCHEMA.TABLES
+07:16:56.013285 [debug]: Writing runtime sql for node "model.order_analytics_dbt.dim_restaurants"
+07:16:56.201753 [debug]: Query executed on node model.order_analytics_dbt.fct_orders:
+SELECT
+    table_catalog,
+    table_schema,
+    table_name,
+    table_type
+FROM 
+    `velvety-citizen-466214-r4`.`raw_staging_marts`.INFORMATION_SCHEMA.TABLES
+07:16:56.204305 [debug]: Writing runtime sql for node "model.order_analytics_dbt.fct_orders"
+07:17:00.146912 [debug]: Query executed on node model.order_analytics_dbt.dim_restaurants:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.order_analytics_dbt.dim_restaurants", "profile_name": "order_analytics_profile", "target_name": "dev"} */
+
+  
+    
+
+    create or replace table `velvety-citizen-466214-r4`.`raw_staging_marts`.`dim_restaurants`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      with orders as (
+    select * from `velvety-citizen-466214-r4`.`raw_staging_staging`.`stg_orders`
+)
+
+select distinct
+    restaurant_id,
+    restaurant_name,
+    restaurant_category,
+    restaurant_lat,
+    restaurant_lon
+from orders
+    );
+  
+07:17:00.148768 [info ]: Finished running [  7.30s] model raw_staging_marts.dim_restaurants [success]
+07:17:00.148869 [info ]:  Succeeded [  7.31s] model raw_staging_marts.dim_restaurants (table)
+07:17:00.167730 [debug]: Query executed on node model.order_analytics_dbt.fct_orders:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.order_analytics_dbt.fct_orders", "profile_name": "order_analytics_profile", "target_name": "dev"} */
+
+  
+    
+
+    create or replace table `velvety-citizen-466214-r4`.`raw_staging_marts`.`fct_orders`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      with orders as (
+    select * from `velvety-citizen-466214-r4`.`raw_staging_staging`.`stg_orders`
+)
+
+select
+    order_id,
+    restaurant_id,
+    customer_id,
+    driver_id,
+    status,
+    total_amount,
+    case 
+        when status = 'PICKED_UP' then 'IN_TRANSIT'
+        when status = 'CANCELLED' then 'CANCELLED'
+        when status = 'ASSIGNED' then 'PREPARING'
+        else 'PENDING'
+    end as delivery_lifecycle_state,
+    event_time as last_status_updated_at
+from orders
+    );
+  
+07:17:00.169154 [info ]: Finished running [  7.33s] model raw_staging_marts.fct_orders [success]
+07:17:00.169274 [info ]:  Succeeded [  7.33s] model raw_staging_marts.fct_orders (table)
+07:17:00.326212 [debug]: Query executed on node model.order_analytics_dbt.fct_hourly_metrics:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.order_analytics_dbt.fct_hourly_metrics", "profile_name": "order_analytics_profile", "target_name": "dev"} */
+
+  
+    
+
+    create or replace table `velvety-citizen-466214-r4`.`raw_staging_marts`.`fct_hourly_metrics`
+      
+    
+    
+
+    
+    OPTIONS()
+    as (
+      with orders as (
+    select * from `velvety-citizen-466214-r4`.`raw_staging_staging`.`stg_orders`
+)
+
+select
+    timestamp_trunc(event_time, hour) as metric_hour,
+    restaurant_category,
+    count(order_id) as total_orders,
+    countif(status = 'CANCELLED') as cancelled_orders,
+    round(countif(status = 'CANCELLED') / count(order_id) * 100, 2) as cancellation_rate_pct,
+    sum(case when status != 'CANCELLED' then total_amount else 0 end) as net_gmv
+from orders
+group by 1, 2
+    );
+  
+07:17:00.327070 [info ]: Finished running [  7.48s] model raw_staging_marts.fct_hourly_metrics [success]
+07:17:00.327359 [info ]: Finished running [ 12.76s] (4 nodes, 0 skipped, 0 errors)
+07:17:00.327738 [info ]:  Succeeded [  7.49s] model raw_staging_marts.fct_hourly_metrics (table)
+07:17:00.944967 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' successfully for target 'dev' [21.2s]
+Processed: 4 models
+Summary: 4 total | 4 success
+==================== 2026-09-14T15:34:36.922704Z | 01a0a08e-5277-7d50-b50a-fa7e72e9c030 ====================
+15:34:36.922844 [info ]: dbt-core 2.0.0-alpha.5
+15:34:36.923711 [info ]: Started loading project
+15:34:36.930178 [info ]: Loading profiles.yml
+15:34:36.957558 [debug]:    Started loading packages
+15:34:36.984677 [debug]:     Loaded [  0.03s] packages
+15:34:36.995119 [info ]: Finished loading project [  0.07s]
+15:34:36.998346 [info ]: Started parsing
+15:34:37.083190 [debug]: Finished parsing models/marts/schema.yml [  0.01s]
+15:34:37.084544 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+15:34:37.125696 [debug]: Finished parsing models/marts/dim_restaurants.sql [  0.03s]
+15:34:37.126528 [debug]: Finished parsing models/marts/fct_hourly_metrics.sql [  0.00s]
+15:34:37.127122 [debug]: Finished parsing models/marts/fct_orders.sql [  0.00s]
+15:34:37.127996 [debug]: Finished parsing models/staging/stg_orders.sql [  0.00s]
+15:34:37.153329 [debug]: Finished parsing target\generic_tests\unique_dim_restaurants_restaurant_id.sql [  0.00s]
+15:34:37.154425 [debug]: Finished parsing target\generic_tests\not_null_dim_restaurants_restaurant_id.sql [  0.00s]
+15:34:37.155002 [debug]: Finished parsing target\generic_tests\not_null_fct_hourly_metrics_metric_hour.sql [  0.00s]
+15:34:37.155686 [debug]: Finished parsing target\generic_tests\not_null_fct_hourly_metrics_total_orders.sql [  0.00s]
+15:34:37.156484 [debug]: Finished parsing target\generic_tests\unique_fct_orders_order_id.sql [  0.00s]
+15:34:37.157313 [debug]: Finished parsing target\generic_tests\not_null_fct_orders_order_id.sql [  0.00s]
+15:34:37.157955 [debug]: Finished parsing target\generic_tests\not_null_fct_orders_total_amount.sql [  0.00s]
+15:34:37.166128 [info ]: Finished parsing [  0.17s]
+15:34:37.170974 [info ]: Started scheduling
+15:34:37.175304 [info ]: Finished scheduling [  0.00s]
+15:34:37.181490 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "velvety-citizen-466214-r4", schema: "raw_staging_marts", table: "dim_restaurants" }) and interval: None
+15:34:37.182085 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "velvety-citizen-466214-r4", schema: "raw_staging_marts", table: "fct_hourly_metrics" }) and interval: None
+15:34:37.182153 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "velvety-citizen-466214-r4", schema: "raw_staging_marts", table: "fct_orders" }) and interval: None
+15:34:37.194520 [info ]: Started building task graph
+15:34:37.199823 [info ]: Finished building task graph [  0.01s]
+15:34:37.208256 [info ]: Started rendering (7 nodes)
+15:34:37.209370 [info ]: Started test raw_staging_dbt_test__audit.unique_fct_orders_order_id
+15:34:37.209731 [debug]: Started rendering test raw_staging_dbt_test__audit.unique_fct_orders_order_id
+15:34:37.209991 [info ]: Started test raw_staging_dbt_test__audit.unique_dim_restaurants_restaurant_id
+15:34:37.210012 [debug]: Started rendering test raw_staging_dbt_test__audit.unique_dim_restaurants_restaurant_id
+15:34:37.210053 [info ]: Started test raw_staging_dbt_test__audit.not_null_fct_orders_total_amount
+15:34:37.210067 [debug]: Started rendering test raw_staging_dbt_test__audit.not_null_fct_orders_total_amount
+15:34:37.210086 [info ]: Started test raw_staging_dbt_test__audit.not_null_fct_orders_order_id
+15:34:37.210097 [debug]: Started rendering test raw_staging_dbt_test__audit.not_null_fct_orders_order_id
+15:34:37.210115 [info ]: Started test raw_staging_dbt_test__audit.not_null_fct_hourly_metrics_total_orders
+15:34:37.210170 [debug]: Started rendering test raw_staging_dbt_test__audit.not_null_fct_hourly_metrics_total_orders
+15:34:37.210192 [info ]: Started test raw_staging_dbt_test__audit.not_null_fct_hourly_metrics_metric_hour
+15:34:37.210207 [debug]: Started rendering test raw_staging_dbt_test__audit.not_null_fct_hourly_metrics_metric_hour
+15:34:37.210245 [info ]: Started test raw_staging_dbt_test__audit.not_null_dim_restaurants_restaurant_id
+15:34:37.210261 [debug]: Started rendering test raw_staging_dbt_test__audit.not_null_dim_restaurants_restaurant_id
+15:34:37.239499 [debug]: Compiled SQL for node test.order_analytics_dbt.unique_dim_restaurants_restaurant_id.3bd3ca0fc9 at target\compiled\order_analytics_dbt\target\generic_tests\unique_dim_restaurants_restaurant_id.sql
+15:34:37.239669 [debug]: Compiled SQL for node test.order_analytics_dbt.not_null_fct_hourly_metrics_total_orders.a6615cdb5f at target\compiled\order_analytics_dbt\target\generic_tests\not_null_fct_hourly_metrics_total_orders.sql
+15:34:37.239499 [debug]: Compiled SQL for node test.order_analytics_dbt.not_null_fct_hourly_metrics_metric_hour.62303c1782 at target\compiled\order_analytics_dbt\target\generic_tests\not_null_fct_hourly_metrics_metric_hour.sql
+15:34:37.240023 [debug]: Compiled SQL for node test.order_analytics_dbt.unique_fct_orders_order_id.523ddb6ce5 at target\compiled\order_analytics_dbt\target\generic_tests\unique_fct_orders_order_id.sql
+15:34:37.240445 [debug]: Compiled SQL for node test.order_analytics_dbt.not_null_dim_restaurants_restaurant_id.2e7e73f873 at target\compiled\order_analytics_dbt\target\generic_tests\not_null_dim_restaurants_restaurant_id.sql
+15:34:37.240525 [debug]: Compiled SQL for node test.order_analytics_dbt.not_null_fct_orders_order_id.4e687af8d0 at target\compiled\order_analytics_dbt\target\generic_tests\not_null_fct_orders_order_id.sql
+15:34:37.240817 [debug]: Compiled SQL for node test.order_analytics_dbt.not_null_fct_orders_total_amount.f8b7bfac38 at target\compiled\order_analytics_dbt\target\generic_tests\not_null_fct_orders_total_amount.sql
+15:34:37.243357 [debug]: Finished rendering [  0.03s] test raw_staging_dbt_test__audit.not_null_dim_restaurants_restaurant_id [success]
+15:34:37.244280 [info ]: Started running (7 nodes)
+15:34:37.244508 [info ]: Started running test raw_staging_dbt_test__audit.not_null_dim_restaurants_restaurant_id
+15:34:37.244567 [debug]: Finished rendering [  0.03s] test raw_staging_dbt_test__audit.unique_fct_orders_order_id [success]
+15:34:37.244927 [info ]: Started running test raw_staging_dbt_test__audit.unique_fct_orders_order_id
+15:34:37.244968 [debug]: Finished rendering [  0.03s] test raw_staging_dbt_test__audit.not_null_fct_orders_order_id [success]
+15:34:37.245264 [info ]: Started running test raw_staging_dbt_test__audit.not_null_fct_orders_order_id
+15:34:37.245312 [debug]: Finished rendering [  0.04s] test raw_staging_dbt_test__audit.not_null_fct_hourly_metrics_metric_hour [success]
+15:34:37.245589 [info ]: Started running test raw_staging_dbt_test__audit.not_null_fct_hourly_metrics_metric_hour
+15:34:37.245624 [debug]: Finished rendering [  0.04s] test raw_staging_dbt_test__audit.unique_dim_restaurants_restaurant_id [success]
+15:34:37.245892 [info ]: Started running test raw_staging_dbt_test__audit.unique_dim_restaurants_restaurant_id
+15:34:37.245928 [debug]: Finished rendering [  0.04s] test raw_staging_dbt_test__audit.not_null_fct_orders_total_amount [success]
+15:34:37.246187 [info ]: Started running test raw_staging_dbt_test__audit.not_null_fct_orders_total_amount
+15:34:37.246273 [debug]: Finished rendering [  0.04s] test raw_staging_dbt_test__audit.not_null_fct_hourly_metrics_total_orders [success]
+15:34:37.246539 [info ]: Finished rendering [  0.04s] (7 nodes, 0 skipped, 0 errors)
+15:34:37.246900 [info ]: Started running test raw_staging_dbt_test__audit.not_null_fct_hourly_metrics_total_orders
+15:34:37.256076 [debug]: Writing runtime sql for node "test.order_analytics_dbt.not_null_fct_orders_order_id.4e687af8d0"
+15:34:37.256076 [debug]: Writing runtime sql for node "test.order_analytics_dbt.not_null_fct_orders_total_amount.f8b7bfac38"
+15:34:37.256076 [debug]: Writing runtime sql for node "test.order_analytics_dbt.not_null_dim_restaurants_restaurant_id.2e7e73f873"
+15:34:37.256076 [debug]: Writing runtime sql for node "test.order_analytics_dbt.not_null_fct_hourly_metrics_total_orders.a6615cdb5f"
+15:34:37.256076 [debug]: Writing runtime sql for node "test.order_analytics_dbt.not_null_fct_hourly_metrics_metric_hour.62303c1782"
+15:34:37.256080 [debug]: Writing runtime sql for node "test.order_analytics_dbt.unique_fct_orders_order_id.523ddb6ce5"
+15:34:37.256076 [debug]: Writing runtime sql for node "test.order_analytics_dbt.unique_dim_restaurants_restaurant_id.3bd3ca0fc9"
+15:34:41.660343 [debug]: Query executed on node test.order_analytics_dbt.not_null_fct_orders_order_id.4e687af8d0:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.order_analytics_dbt.not_null_fct_orders_order_id.4e687af8d0", "profile_name": "order_analytics_profile", "target_name": "dev"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select order_id
+from `velvety-citizen-466214-r4`.`raw_staging_marts`.`fct_orders`
+where order_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+15:34:41.661622 [info ]: Finished running [  4.42s] test raw_staging_dbt_test__audit.not_null_fct_orders_order_id [pass]
+15:34:41.662014 [info ]:     Passed [  4.45s] test  not_null_fct_orders_order_id
+15:34:41.664811 [debug]: Query executed on node test.order_analytics_dbt.not_null_dim_restaurants_restaurant_id.2e7e73f873:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.order_analytics_dbt.not_null_dim_restaurants_restaurant_id.2e7e73f873", "profile_name": "order_analytics_profile", "target_name": "dev"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select restaurant_id
+from `velvety-citizen-466214-r4`.`raw_staging_marts`.`dim_restaurants`
+where restaurant_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+15:34:41.665809 [info ]: Finished running [  4.42s] test raw_staging_dbt_test__audit.not_null_dim_restaurants_restaurant_id [pass]
+15:34:41.665974 [info ]:     Passed [  4.45s] test  not_null_dim_restaurants_restaurant_id
+15:34:41.677047 [debug]: Query executed on node test.order_analytics_dbt.unique_fct_orders_order_id.523ddb6ce5:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.order_analytics_dbt.unique_fct_orders_order_id.523ddb6ce5", "profile_name": "order_analytics_profile", "target_name": "dev"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with dbt_test__target as (
+
+  select order_id as unique_field
+  from `velvety-citizen-466214-r4`.`raw_staging_marts`.`fct_orders`
+  where order_id is not null
+
+)
+
+select
+    unique_field,
+    count(*) as n_records
+
+from dbt_test__target
+group by unique_field
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+15:34:41.677613 [info ]: Finished running [  4.43s] test raw_staging_dbt_test__audit.unique_fct_orders_order_id [pass]
+15:34:41.678261 [info ]:     Passed [  4.47s] test  unique_fct_orders_order_id
+15:34:41.742125 [debug]: Query executed on node test.order_analytics_dbt.not_null_fct_orders_total_amount.f8b7bfac38:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.order_analytics_dbt.not_null_fct_orders_total_amount.f8b7bfac38", "profile_name": "order_analytics_profile", "target_name": "dev"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select total_amount
+from `velvety-citizen-466214-r4`.`raw_staging_marts`.`fct_orders`
+where total_amount is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+15:34:41.743165 [info ]: Finished running [  4.50s] test raw_staging_dbt_test__audit.not_null_fct_orders_total_amount [pass]
+15:34:41.743921 [info ]:     Passed [  4.53s] test  not_null_fct_orders_total_amount
+15:34:41.782816 [debug]: Query executed on node test.order_analytics_dbt.not_null_fct_hourly_metrics_total_orders.a6615cdb5f:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.order_analytics_dbt.not_null_fct_hourly_metrics_total_orders.a6615cdb5f", "profile_name": "order_analytics_profile", "target_name": "dev"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select total_orders
+from `velvety-citizen-466214-r4`.`raw_staging_marts`.`fct_hourly_metrics`
+where total_orders is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+15:34:41.783399 [info ]: Finished running [  4.54s] test raw_staging_dbt_test__audit.not_null_fct_hourly_metrics_total_orders [pass]
+15:34:41.783631 [info ]:     Passed [  4.57s] test  not_null_fct_hourly_metrics_total_orders
+15:34:41.827390 [debug]: Query executed on node test.order_analytics_dbt.not_null_fct_hourly_metrics_metric_hour.62303c1782:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.order_analytics_dbt.not_null_fct_hourly_metrics_metric_hour.62303c1782", "profile_name": "order_analytics_profile", "target_name": "dev"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select metric_hour
+from `velvety-citizen-466214-r4`.`raw_staging_marts`.`fct_hourly_metrics`
+where metric_hour is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+15:34:41.827842 [info ]: Finished running [  4.58s] test raw_staging_dbt_test__audit.not_null_fct_hourly_metrics_metric_hour [pass]
+15:34:41.828386 [info ]:     Passed [  4.62s] test  not_null_fct_hourly_metrics_metric_hour
+15:34:42.157502 [debug]: Query executed on node test.order_analytics_dbt.unique_dim_restaurants_restaurant_id.3bd3ca0fc9:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.order_analytics_dbt.unique_dim_restaurants_restaurant_id.3bd3ca0fc9", "profile_name": "order_analytics_profile", "target_name": "dev"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with dbt_test__target as (
+
+  select restaurant_id as unique_field
+  from `velvety-citizen-466214-r4`.`raw_staging_marts`.`dim_restaurants`
+  where restaurant_id is not null
+
+)
+
+select
+    unique_field,
+    count(*) as n_records
+
+from dbt_test__target
+group by unique_field
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+15:34:42.158525 [info ]: Finished running [  4.91s] test raw_staging_dbt_test__audit.unique_dim_restaurants_restaurant_id [pass]
+15:34:42.158829 [info ]: Finished running [  4.91s] (7 nodes, 0 skipped, 0 errors)
+15:34:42.160020 [info ]:     Passed [  4.95s] test  unique_dim_restaurants_restaurant_id
+15:34:42.720108 [info ]: 
+==================== Execution Summary =====================
+Finished 'test' successfully for target 'dev' [5.8s]
+Processed: 7 tests
+Summary: 7 total | 7 success
